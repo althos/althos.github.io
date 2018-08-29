@@ -61,12 +61,12 @@ disqus_username: junruPan
 
 # Gitalk
 gitalk:
-  enable: false    #是否开启Gitalk评论
-  clientID: f2c84e7629bb1446c1a4                            #生成的clientID
-  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
-  repo: qiubaiying.github.io    #仓库名称
-  owner: qiubaiying    #github用户名
-  admin: qiubaiying
+  enable: true    #是否开启Gitalk评论
+  clientID: 24e03f4bdc70cf4f28f3                            #生成的clientID
+  clientSecret: fd21c1c6f8672fbfcd68a7c4c95306a65c27b9ce    #生成的clientSecret
+  repo: althos.github.io    #仓库名称
+  owner: althos    #github用户名
+  admin: althos
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
