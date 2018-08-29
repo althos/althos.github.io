@@ -62,8 +62,8 @@ disqus_username: junruPan
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: 24e03f4bdc70cf4f28f3                            #生成的clientID
-  clientSecret: fd21c1c6f8672fbfcd68a7c4c95306a65c27b9ce    #生成的clientSecret
+  clientID: c9dd05f26c4218402b4c                            #生成的clientID
+  clientSecret: 36294f69843cc3c7f5a4b1676bcd66e70f656dbd    #生成的clientSecret
   repo: althos.github.io    #仓库名称
   owner: althos    #github用户名
   admin: althos
