@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      mysql的安装
-subtitle:   cntos7 MySQL5.7安装配置
+subtitle:   centos7 MySQL5.7安装配置
 date:       2018-09-01
 author:     Cyber
 header-img: img/post-bg-map.jpg
