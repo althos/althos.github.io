@@ -23,11 +23,11 @@ tags:
 
 # 获取源
 
+> ```
 > local]# wget http://dev.mysql.com/get/mysql57-community-release-el7-8.noarch.rpm
->
 > local]#yum localinstall mysql57-community-release-el7-8.noarch.rpm
->
-> local]#yum repolist enabled | grep "mysql.*-community.*"
+> local]#yum repolist enabled|grep "mysql.*-community.*"
+> ```
 
 
 
