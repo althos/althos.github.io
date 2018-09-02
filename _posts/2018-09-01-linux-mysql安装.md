@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      mysql的安装
-subtitle:   cntos7 MySQL5.7安装版配置
+subtitle:   cntos7 MySQL5.7安装配置
 date:       2018-09-01
 author:     Cyber
 header-img: img/post-bg-map.jpg
@@ -120,8 +120,10 @@ tags:
 
 # 设置开机启动
 
+> ```
 >  local]#  systemctl enable mysqld
 >  local]#  systemctl daemon-reload
+> ```
 
 
 
