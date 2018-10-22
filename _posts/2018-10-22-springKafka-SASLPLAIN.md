@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Springboot+Kafka+SASL/PLAIN配置
+title:      springKafka-SASLPLAIN
 subtitle:   spring-kafka+SASL/PLAIN配置
 date:       2018-10-22
 author:     Cyber
