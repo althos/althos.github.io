@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      springKafka-SASLPLAIN
-subtitle:   spring-kafka+SASL/PLAIN配置
+subtitle:   pringKafka-SASLPLAIN配置
 date:       2018-10-22
 author:     Cyber
 header-img: img/post-bg-os-metro.jpg
