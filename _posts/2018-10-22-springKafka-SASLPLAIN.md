@@ -7,7 +7,6 @@ author:     Cyber
 header-img: img/post-bg-os-metro.jpg
 catalog: true
 tags:
-- 微信
 - springboot
 - java
 - kafka
