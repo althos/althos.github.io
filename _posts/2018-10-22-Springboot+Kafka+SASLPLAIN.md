@@ -2,7 +2,7 @@
 layout:     post
 title:      Springboot+Kafka+SASL/PLAIN配置
 subtitle:   spring-kafka+SASL/PLAIN配置
-date:       2018-09-14
+date:       2018-10-22
 author:     Cyber
 header-img: img/post-bg-os-metro.jpg
 catalog: true
@@ -10,6 +10,8 @@ tags:
 - 微信
 - springboot
 - java
+- kafka
+- 开发
 ---
 
 
@@ -215,3 +217,6 @@ tags:
 >
 > topic = test, offset = 202, value = cyber
 > topic = test, offset = 203, value = cyber
+
+就这样，实作代码demo在[码云](https://gitee.com/junruPan/common-tools/tree/master/kafka-demo)
+
