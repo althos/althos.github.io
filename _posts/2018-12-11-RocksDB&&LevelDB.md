@@ -37,10 +37,7 @@ tags:
 
 ***Transations***。RocksDB提供了多个操作的事务性，支持悲观和乐观模式。
 
-来源：CSDN 
-原文：https://blog.csdn.net/xuelovexiao/article/details/81046595 
-
-
+来源：[CSDN](https://blog.csdn.net/xuelovexiao/article/details/81046595)
 
 ### LevelDB
 
@@ -92,7 +89,149 @@ Leveldb是一个google实现的非常高效的***kv数据库***，目前的版�
 > <!--leveldb end-->
 > ```
 
-代码其实挺简单的，项目demo参见我的***[码云](https://gitee.com/junruPan/common-tools/tree/master/Lrocks-DbspringBoot)***
+
+
+>bean
+>
+>```
+>@Configuration
+>public class DbInitConfig {
+>
+>    @Bean
+>    @ConditionalOnProperty("db.rocksDB")
+>    public RocksDB rocksDB() {
+>        RocksDB.loadLibrary();
+>
+>        Options options = new Options().setCreateIfMissing(true);
+>        try {
+>            return RocksDB.open(options, "./rocksDB");
+>        } catch (RocksDBException e) {
+>            e.printStackTrace();
+>            return null;
+>        }
+>    }
+>
+>    @Bean
+>    @ConditionalOnProperty("db.levelDB")
+>    public DB levelDB() throws IOException {
+>        org.iq80.leveldb.Options options = new org.iq80.leveldb.Options();
+>        options.createIfMissing(true);
+>        return Iq80DBFactory.factory.open(new File("./levelDB"), options);
+>    }
+>}
+>```
+
+
+
+>接口
+>
+>```
+>public interface DbStore {
+>    /**
+>     * 数据库key value
+>     *
+>     * @param key
+>     *         key
+>     * @param value
+>     *         value
+>     */
+>    void put(String key, String value);
+>
+>    /**
+>     * get By Key
+>     *
+>     * @param key
+>     *         key
+>     * @return value
+>     */
+>    String get(String key);
+>
+>    /**
+>     * remove by key
+>     *
+>     * @param key
+>     *         key
+>     */
+>    void remove(String key);
+>}
+>```
+
+
+
+>levelDB实现类
+>
+>```
+>@Component
+>@ConditionalOnProperty("db.levelDB")
+>public class LevelDbStoreImpl implements DbStore {
+>    @Resource
+>    private DB db;
+>
+>    @Override
+>    public void put(String key, String value) {
+>        db.put(bytes(key), bytes(value));
+>    }
+>
+>    @Override
+>    public String get(String key) {
+>        return asString(db.get(bytes(key)));
+>    }
+>
+>    @Override
+>    public void remove(String key) {
+>        db.delete(bytes(key));
+>    }
+>}
+>```
+
+
+
+>rocksDB实现
+>
+>```
+>@Component
+>@ConditionalOnProperty("db.rocksDB")
+>public class RocksDbStoreImpl implements DbStore {
+>    @Resource
+>    private RocksDB rocksDB;
+>
+>    @Override
+>    public void put(String key, String value) {
+>        try {
+>            rocksDB.put(key.getBytes("utf-8"), value.getBytes("utf-8"));
+>        } catch (RocksDBException | UnsupportedEncodingException e) {
+>            e.printStackTrace();
+>        }
+>    }
+>
+>
+>    @Override
+>    public String get(String key) {
+>        try {
+>            byte[] bytes = rocksDB.get(key.getBytes("utf-8"));
+>            if (bytes != null) {
+>                return new String(bytes, "utf-8");
+>            }
+>            return null;
+>        } catch (Exception e) {
+>            e.printStackTrace();
+>            return null;
+>        }
+>    }
+>
+>    @Override
+>    public void remove(String key) {
+>        try {
+>            rocksDB.delete(rocksDB.get(key.getBytes("utf-8")));
+>        } catch (RocksDBException | UnsupportedEncodingException e) {
+>            e.printStackTrace();
+>        }
+>    }
+>
+>}
+>```
+
+代码其实挺简单，项目demo参见我的***[码云](https://gitee.com/junruPan/common-tools/tree/master/Lrocks-DbspringBoot)***
 
 
 
