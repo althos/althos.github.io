@@ -231,6 +231,18 @@ Leveldb是一个google实现的非常高效的***kv数据库***，目前的版�
 >}
 >```
 
+
+
+>yml
+>
+>```
+>db:
+>  levelDB: false    #在部分Windows机器上rocksDB会报错dll找不到，那么就用levelDB来替代
+>  rocksDB: true
+>```
+
+
+
 代码其实挺简单，项目demo参见我的***[码云](https://gitee.com/junruPan/common-tools/tree/master/Lrocks-DbspringBoot)***
 
 
