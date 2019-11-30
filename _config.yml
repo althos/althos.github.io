@@ -17,7 +17,7 @@ sidebar-avatar: /img/about-CB-gentle.jpg                      # use absolute URL
 
 
 # SNS settings
-RSS: true
+RSS: false
 weibo_username:      junruPan
 zhihu_username:      cyberPan
 github_username:     althos
